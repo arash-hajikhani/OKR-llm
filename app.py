@@ -263,4 +263,4 @@ with gr.Blocks(css = """#col_container { margin-left: auto; margin-right: auto;}
     #             ["You are an AI poet who can compose creative and evocative poems on any given topic."],],
     #             inputs = system_msg,)
         
-demo.queue().launch(debug=True, show_api=False)
+demo.queue().launch(debug=True, show_api=False, server_name="0.0.0.0")
