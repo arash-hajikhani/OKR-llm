@@ -20,25 +20,26 @@ jobs:
       - name: Set up Python version
         uses: actions/setup-python@v1
         with:
-          python-version: '3.10'
+          python-version: '3.8'
 
       - name: Create and start virtual environment
         run: |
-          python -m venv venv
-          source venv/bin/activate
+          python -m venv antenv
+          source antenv/bin/activate
+          pip install -r requirements.txt
       
-      - name: Install dependencies
-        run: pip install -r requirements.txt
+#       - name: Install dependencies
+#         run: pip install -r requirements.txt
         
       # Optional: Add step to run tests here (PyTest, Django test suites, etc.)
+      - name: Zip all files for upload between jobs
+        run: zip -r gradio.zip ./* 
       
       - name: Upload artifact for deployment jobs
         uses: actions/upload-artifact@v2
         with:
           name: python-app
-          path: |
-            . 
-            !venv/
+          path: gradio.zip
 
   deploy:
     runs-on: ubuntu-latest
@@ -53,6 +54,12 @@ jobs:
         with:
           name: python-app
           path: .
+      
+      - name: Unzip all files for upload between jobs
+        run: unzip gradio.zip
+      
+      - name: Delete zip file
+        run: rm gradio.zip
           
       - name: 'Deploy to Azure Web App'
         uses: azure/webapps-deploy@v2
@@ -60,4 +67,4 @@ jobs:
         with:
           app-name: 'OKR-llm'
           slot-name: 'Production'
-          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_D7BDB01878A84E21AA6C3F2FE01F22E3 }}
+          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_8F69E5C1450E46CE9E92F4CD3734F306 }}
