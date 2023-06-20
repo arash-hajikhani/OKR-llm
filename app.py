@@ -26,15 +26,15 @@ def predict(openai_gpt4_key, inputs, chat_counter, chatbot=[], history=[]):
         {"role": "system", "content": "You are a helpful assistant."},
         {
             "role": "user",
-            "content": "I need help formulating my OKRs. Can you help me with that?",
+            "content": "I need help formulating my Goals and Success Indicators. Can you help me with that?",
         },
         {
             "role": "assistant",
-            "content": "Of course! To start, let's look at your overall objective. What's the key goal you're aiming for in this period?",
+            "content": "Of course! To start, let's look at your overall goals or objective. What's the key goal you're aiming for in this period?",
         },
         {
             "role": "user",
-            "content": "My key goal is to 'grow qualified leads to a new level', 'have customers switch from platform X to ours', and 'be more efficient and digital'.",
+            "content": "My key goal is to 'grow qualified customer leads to a new level', 'have customers switch from platform X to ours', and 'be more efficient and digital'.",
         },
         {
             "role": "assistant",
@@ -183,7 +183,7 @@ theme = gr.themes.Soft(
 
 with gr.Blocks(
     css="""#col_container { margin-left: auto; margin-right: auto;} #chatbot {height: 520px; overflow: auto;} footer {visibility: hidden}""",
-    title="OKR Assistance Tool"
+    title="Goals and Success Assistance Tool"
 ) as demo:
     gr.HTML(title)
     gr.HTML(theme_addon_msg)
@@ -206,9 +206,9 @@ with gr.Blocks(
         with gr.Row():
             inputs = gr.Textbox(
                 value="",
-                label="Enter your OKR",
+                label="Enter your Goals and Success indicators",
                 info="""
-            In order to get suggestions, submit your OKRs with clarity, stating your objective and key results
+            In order to get suggestions, submit your Goals and Success with clarity
             """,
             )
         state = gr.State([])
