@@ -38,7 +38,7 @@ def predict(openai_gpt4_key, inputs, chat_counter, chatbot=[], history=[]):
         },
         {
             "role": "assistant",
-            "content": "Great! Let's form some measurable key results for each objective.",
+            "content": "Great! Let's form some measurable success indicators results for each goal or objective.",
         },
         {"role": "user", "content": f"{inputs}"},
     ]
