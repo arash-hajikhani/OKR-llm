@@ -158,21 +158,18 @@ def set_visible_true():
 
 
 title = """<h1 align="center">
-Welcome to our OKR Assistance Tool!</h1>
+Welcome to Goals and Success Indicators Assistance Tool!</h1>
 <h2>
-This tool is designed to help you refine your Objectives and Key Results (OKRs). OKR is a popular framework used for setting and tracking goals. 
-'Objectives' define what we aim to achieve and 'Key Results' are measurable ways to track the progress towards these objectives.
-By providing your OKRs and any specific concerns, our tool will give feedback and suggestions on how to make your OKRs more effective. 
-Whether you're just getting started or trying to improve existing OKRs, this tool can help guide you to success."
+This tool is designed to help you refine your Goals and Success Indicators.
+'Goals' define what we aim to achieve and 'Success Indicators' are measurable ways to track the progress towards these goals.
+By providing your Goals and Success Indicators, the tool will provide feedback and suggestions on how to make them more effective."
 </h2>"""
 # display message for themes feature
 theme_addon_msg = """
 <h2>
-When submitting your OKRs for review: <br>
-    1. Detail Your OKRs: Clearly state your Objective and Key Results. More context helps generate better feedback.<br>
-    2. Be Specific: Describe the relevant context of your OKRs, like your role or team, and the strategic goals you're aiming to achieve.<br>
-    3. Clarify Your Request: If you seek specific guidance, like making your OKRs more quantifiable or aligning them with strategic goals, please specify.<br>
-    This will help us provide the most effective suggestions for your OKRs. Enjoy the process!
+When submitting your goals and success indicators draft for review: <br>
+    1. Detail Your Goals and Success Indicators: More context helps generate better feedback.<br>
+    2. Clarify Your Request: If you seek specific guidance, like making your success indicators more quantifiable or aligning them with certain objectives, you can specify.<br>
 </h2>
 """
 
