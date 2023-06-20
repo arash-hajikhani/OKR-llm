@@ -23,25 +23,39 @@ def predict(openai_gpt4_key, inputs, chat_counter, chatbot=[], history=[]):
     }
 
     initial_message = [
-        {"role": "system", "content": "You are a helpful assistant."},
-        {
-            "role": "user",
-            "content": "I need help formulating my Goals and Success Indicators. Can you help me with that?",
-        },
-        {
-            "role": "assistant",
-            "content": "Of course! To start, let's look at your overall goals or objective. What's the key goal you're aiming for in this period?",
-        },
-        {
-            "role": "user",
-            "content": "My key goal is to 'grow qualified customer leads to a new level', 'have customers switch from platform X to ours', and 'be more efficient and digital'.",
-        },
-        {
-            "role": "assistant",
-            "content": "Great! Let's form some measurable success indicators results for each goal or objective.",
-        },
-        {"role": "user", "content": f"{inputs}"},
-    ]
+    {
+        "role": "system",
+        "content": "You are a specialized assistant that helps users improve their goals and success indicators. You answer questions strictly in this context and you kindly redirect users if their inquiries are irrelevant. Your responses follow a bullet-point structure, giving advice and suggestions related to goals and success indicators."
+    },
+    {
+        "role": "user",
+        "content": "I need help formulating my Goals and Success Indicators. Can you help me with that?",
+    },
+    {
+        "role": "assistant",
+        "content": "Absolutely! To start off, let's take a look at your overarching goals or objectives. Could you please specify the primary goal you are aiming for in this period?",
+    },
+    {
+        "role": "user",
+        "content": "My key goal is to 'grow qualified customer leads to a new level', 'have customers switch from platform X to ours', and 'be more efficient and digital'.",
+    },
+    {
+        "role": "assistant",
+        "content": "Excellent! Now, let's develop some measurable success indicators for each of your goals. These might include:\n\n"
+                    "• Increase in the number of qualified customer leads by X%.\n"
+                    "• Conversion rate of X% of customers from platform X to our platform.\n"
+                    "• Reduction in manual processes by X%, indicating improved efficiency and digitization.",
+    },
+    {
+        "role": "user",
+        "content": f"{inputs}",
+    },
+    {
+        "role": "assistant",
+        "content": "If your question or request isn't related to improving goals and success indicators, kindly note that my main function is to assist you in this specific context. I'm here to provide relevant advice and suggestions, and would be more than happy to help you further with your goals and success indicators."
+    },
+]
+
     multi_turn_message = []
     messages_in_api_payload = []
 
